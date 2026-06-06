@@ -18,21 +18,22 @@ export class PokeAPI {
   }
 
   async fetchLocation(locationName: string): Promise<Location> {
-    // implement this
+    throw new Error("Method not implemented.");
   }
-
-
-export type ShallowLocations = {
-    count: number;
-    next: string | null;
-    previous: string | null;
-    results: {
-        name: string;
-        url: string;
-    }[];
 }
 
-export type Location = {
-  // add properties here
-};
 
+  
+export type Location = {
+      // add properties here
+    };
+    
+export type ShallowLocations = {
+        count: number;
+        next: string | null;
+        previous: string | null;
+        results: {
+            name: string;
+            url: string;
+        }[];
+    }
