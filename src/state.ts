@@ -27,6 +27,6 @@ export function initState(): State {
     return {
         commands: getCommands(),
         rl,
-        pokeAPI: new PokeAPI(),
+        pokeAPI: new PokeAPI(5 * 60 * 1000) //5 minutes,
     }
 }
