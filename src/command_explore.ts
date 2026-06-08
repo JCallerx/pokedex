@@ -1,6 +1,6 @@
 import { State } from "./state.js";
 
-export async function explore(state: State, ...args: string[]): Promise<void> {
+export async function commandExplore(state: State, ...args: string[]): Promise<void> {
     const locationName = args[0];
     if (!locationName) {
         throw new Error("Location name is required. Usage: explore <location-name>");
