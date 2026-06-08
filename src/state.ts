@@ -1,7 +1,7 @@
 import { stdin, stdout } from "process";
 import { createInterface, type Interface } from "readline";
 import { getCommands } from "./get_commands.js";
-import { PokeAPI } from "./pokeapi.js";
+import { PokeAPI, Pokemon } from "./pokeapi.js";
 
 export type CLICommand = {
     name: string;
@@ -13,6 +13,7 @@ export type State = {
     commands: Record<string, CLICommand>;
     rl: Interface;
     pokeAPI: PokeAPI
+    caughtPokemon: Record<string, Pokemon>;
     nextPageURL?: string | null;
     previousPageURL?: string | null;
 }
@@ -27,6 +28,7 @@ export function initState(): State {
     return {
         commands: getCommands(),
         rl,
-        pokeAPI: new PokeAPI(5 * 60 * 1000) //5 minutes,
+        pokeAPI: new PokeAPI(5 * 60 * 1000), //5 minutes
+        caughtPokemon: {}
     }
 }

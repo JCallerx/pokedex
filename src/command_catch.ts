@@ -13,9 +13,9 @@ export async function commandCatch(state: State, ...args: string[]) {
     if (successRate > .5) {
         console.log(successRate)
         console.log(`${pokemonData.name} was caught!`);
+        state.caughtPokemon[pokemonData.name] = pokemonData;
     } else {
         console.log(successRate)
-
         console.log(`${pokemonData.name} escaped!`);
     }
 }
