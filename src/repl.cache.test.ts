@@ -11,7 +11,7 @@ test.concurrent.each([
     key: "https://example.com/path",
     val: "moretestdata",
     interval: 1000,
-  },
+  }, 
 ])("Test Caching $interval ms", async ({ key, val, interval }) => {
   const cache = new Cache(interval);
 

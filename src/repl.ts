@@ -20,7 +20,7 @@ export function startREPL(state: State) {
         const cmd = commands[commandName]
         
         if(cmd) {
-            cmd.callback(state);
+            cmd.callback(state, ...cleanArr.slice(1));
         } 
         else{
             console.log("Unknown command")
