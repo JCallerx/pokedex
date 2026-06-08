@@ -3,7 +3,8 @@ import { State } from "./state.js";
 export async function commandCatch(state: State, ...args: string[]) {
     const name = args[0];
     if (!name) {
-        throw new Error("Pokemon name is required. Usage: catch <pokemon-name>");
+        console.log("Pokemon name is required. Usage: catch <pokemon-name>");
+        return;
     }
     console.log(`Throwing a Pokeball at ${name}...`);
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
